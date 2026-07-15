@@ -405,89 +405,34 @@ else:
         # TAB 4: JD MATCHING
         # ===================================================================
         with tab4:
-           st.markdown("### 📄 Job Description Matching")
+            st.markdown("### 📄 Job Description Matching")
 
-           jd_file = st.file_uploader(
-               "Or upload Job Description (.txt)",
+            jd_file = st.file_uploader(
+                "Or upload Job Description (.txt)",
                 type=["txt"],
                 key="jd_upload",
-           )
+            )
 
-           if jd_file is not None:
-               jd_text = jd_file.getvalue().decode("utf-8")
-           else:
-               jd_text = st.text_area(
-                 "Paste job description here (optional)",
-                  placeholder="Paste the job description you want to match against...",
-                  height=150,
-               )
-
-    if jd_text:
-        if st.button("🔍 Match Resume to JD", type="primary"):
-            with st.spinner("Analyzing job description match..."):
-                jd_match = match_resume_to_jd(
-                    st.session_state.resume_text,
-                    jd_text,
-                    st.session_state.sections,
-                )
-                st.session_state.jd_match_result = jd_match
-            
-           
-
-           
-
-        if jd_text:
-            if st.button("🔍 Match Resume to JD", type="primary"):
-                with st.spinner("Analyzing job description match..."):
-                    jd_match = match_resume_to_jd(
-                        st.session_state.resume_text,
-                        jd_text,
-                        st.session_state.sections,
-                    )
-                    st.session_state.jd_match_result = jd_match
-
-        if st.session_state.jd_match_result:
-            match_result = st.session_state.jd_match_result
-
-            # Score
-            col1, col2, col3 = st.columns(3)
-
-            with col1:
-                st.metric(
-                    "Match Score",
-                    f"{match_result['overall_match_score']:.0f}/100",
-                    border=True,
+            if jd_file is not None:
+                jd_text = jd_file.getvalue().decode("utf-8")
+            else:
+                jd_text = st.text_area(
+                    "Paste job description here (optional)",
+                    placeholder="Paste the job description you want to match against...",
+                    height=150,
                 )
 
-            with col2:
-                st.metric(
-                    "Grade",
-                    match_result["match_grade"],
-                    border=True,
-                )
+            if jd_text:
+                if st.button("🔍 Match Resume to JD", type="primary"):
+                    with st.spinner("Analyzing job description match..."):
+                        jd_match = match_resume_to_jd(
+                            st.session_state.resume_text,
+                            jd_text,
+                            st.session_state.sections,
+                        )
+                        st.session_state.jd_match_result = jd_match
 
-            with col3:
-                skill_match = match_result["skill_match_result"]
-                st.metric(
-                    "Skills Match",
-                    f"{skill_match['matched_count']}/{skill_match['jd_total']}",
-                    border=True,
-                )
-
-            st.divider()
-
-            # Missing skills
-            missing = match_result["skill_match_result"]["missing_skills"]
-            if missing:
-                st.markdown("### ❌ Missing Skills")
-                missing_names = [s["name"] for s in missing[:10]]
-                st.markdown(", ".join(missing_names))
-
-            # Recommendations
-            if match_result["recommendations"]:
-                st.markdown("### 💡 Recommendations")
-                for rec in match_result["recommendations"]:
-                    st.markdown(f"- {rec}")
+            if st.session_state.jd_match_result:
                 match_result = st.session_state.jd_match_result
 
                 # Score
@@ -529,7 +474,6 @@ else:
                     st.markdown("### 💡 Recommendations")
                     for rec in match_result["recommendations"]:
                         st.markdown(f"- {rec}")
-
         # ===================================================================
         # TAB 5: DOWNLOAD
         # ===================================================================
