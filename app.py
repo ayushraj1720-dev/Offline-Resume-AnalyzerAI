@@ -184,18 +184,19 @@ with st.sidebar:
 
         # Extract on upload
         with st.spinner("Extracting text from PDF..."):
-            pdf_result = extract_text_from_pdf(uploaded_file.read())
+            pdf_bytes = uploaded_file.getvalue()
+
+            pdf_result = extract_text_from_pdf(pdf_bytes)
 
             if pdf_result["error"]:
                 st.error(f"❌ {pdf_result['error']}")
                 uploaded_file = None
             else:
                 st.session_state.resume_text = pdf_result["text"]
-                st.session_state.pdf_metadata = get_pdf_metadata(uploaded_file.read())
+                st.session_state.pdf_metadata = get_pdf_metadata(pdf_bytes)
 
                 st.markdown(f"**Pages:** {pdf_result['pages']}")
                 st.markdown(f"**Words:** {pdf_result['word_count']}")
-
     if uploaded_file and st.session_state.resume_text:
         st.divider()
         st.markdown("### 🚀 Analysis")
