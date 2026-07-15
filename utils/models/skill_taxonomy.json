@@ -1,0 +1,118 @@
+{
+  "programming_languages": [
+    "python", "java", "javascript", "typescript", "c++", "c#", "go", "rust",
+    "ruby", "php", "swift", "kotlin", "scala", "r", "matlab", "perl", "groovy",
+    "objective-c", "haskell", "clojure", "elixir", "erlang", "lua", "julia"
+  ],
+  "web_frameworks": [
+    "django", "flask", "fastapi", "pyramid", "tornado", "bottle",
+    "react", "vue", "angular", "svelte", "ember", "next.js", "nuxt",
+    "node.js", "express", "koa", "hapi", "fastify",
+    "spring", "spring boot", "spring mvc", "jsp", "servlets",
+    "asp.net", "asp.net core", "mvc", "web api", "blazor",
+    "laravel", "symfony", "yii", "cakephp", "zend",
+    "rails", "sinatra", "hanami", "phoenix", "elixir"
+  ],
+  "databases": [
+    "sql", "mysql", "postgresql", "oracle", "mssql", "sqlite", "mariadb",
+    "mongodb", "nosql", "dynamodb", "cosmosdb", "firebase", "firestore",
+    "redis", "memcached", "elasticsearch", "solr", "cassandra",
+    "hbase", "neo4j", "graph database", "influxdb", "timescaledb",
+    "couchdb", "rethinkdb", "arangodb", "cockroachdb", "postgresql"
+  ],
+  "cloud_platforms": [
+    "aws", "amazon web services", "ec2", "s3", "rds", "lambda", "dynamodb",
+    "azure", "azure devops", "cosmosdb", "app service",
+    "gcp", "google cloud", "cloud storage", "bigquery", "firebase",
+    "heroku", "digitalocean", "linode", "vultr", "aws", "cloud run",
+    "oracle cloud", "ibm cloud", "alibaba cloud"
+  ],
+  "devops_tools": [
+    "docker", "kubernetes", "k8s", "docker compose", "podman",
+    "jenkins", "gitlab ci", "github actions", "circleci", "travis ci", "bitbucket pipelines",
+    "terraform", "ansible", "puppet", "chef", "saltstack",
+    "prometheus", "grafana", "elk stack", "splunk", "datadog", "newrelic",
+    "docker swarm", "openshift", "nomad", "vagrant", "packer"
+  ],
+  "data_science_tools": [
+    "pandas", "numpy", "scipy", "scikit-learn", "sklearn",
+    "tensorflow", "pytorch", "keras", "theano", "caffe",
+    "spark", "hadoop", "mapreduce", "hive", "pig",
+    "jupyter", "ipython", "anaconda", "miniconda",
+    "tableau", "powerbi", "looker", "qlik", "spotfire",
+    "matplotlib", "seaborn", "plotly", "bokeh", "ggplot"
+  ],
+  "machine_learning": [
+    "machine learning", "deep learning", "neural networks", "nlp", "computer vision",
+    "supervised learning", "unsupervised learning", "reinforcement learning",
+    "classification", "regression", "clustering", "dimensionality reduction",
+    "transformer", "lstm", "rnn", "cnn", "gan", "boltzmann", "crf"
+  ],
+  "big_data": [
+    "spark", "hadoop", "mapreduce", "hive", "pig", "hbase", "cassandra",
+    "kafka", "zookeeper", "storm", "flume", "sqoop", "spark streaming",
+    "flink", "beam", "airflow", "data warehouse", "data lake"
+  ],
+  "version_control": [
+    "git", "github", "gitlab", "bitbucket", "svn", "mercurial",
+    "gitflow", "git bash", "tortoisegit", "sourcetree"
+  ],
+  "testing": [
+    "junit", "testng", "pytest", "unittest", "mocha", "jest", "jasmine",
+    "selenium", "cypress", "puppeteer", "rspec", "minitest",
+    "testcafe", "protractor", "appium", "xcode test", "xunit",
+    "coverage", "sonarqube", "codeclimate"
+  ],
+  "frontend_technologies": [
+    "html", "css", "javascript", "typescript", "responsive design",
+    "bootstrap", "tailwind", "material ui", "ant design", "chakra ui",
+    "sass", "less", "webpack", "vite", "parcel", "babel",
+    "es6", "jsx", "tsx", "ajax", "websocket", "webgl",
+    "accessibility", "a11y", "wcag", "pwa", "progressive web app"
+  ],
+  "backend_technologies": [
+    "rest api", "graphql", "grpc", "websocket", "soap", "rpc",
+    "microservices", "monolith", "serverless", "lambda", "functions",
+    "authentication", "oauth", "jwt", "saml", "ldap", "active directory",
+    "message queue", "rabbitmq", "activemq", "kafka", "redis",
+    "caching", "cdn", "load balancing", "reverse proxy", "nginx", "apache"
+  ],
+  "mobile_development": [
+    "ios", "android", "swift", "kotlin", "objective-c", "java",
+    "react native", "flutter", "xamarin", "cordova", "ionic",
+    "swiftui", "jetpack", "android studio", "xcode",
+    "firebase", "mobile backend", "push notifications"
+  ],
+  "software_methodologies": [
+    "agile", "scrum", "kanban", "lean", "xp", "extreme programming",
+    "waterfall", "devops", "ci/cd", "tdd", "bdd", "ddd",
+    "microservices", "design patterns", "solid principles",
+    "object-oriented", "oop", "functional programming", "reactive programming"
+  ],
+  "soft_skills": [
+    "leadership", "communication", "problem-solving", "critical thinking",
+    "teamwork", "collaboration", "project management", "stakeholder management",
+    "time management", "delegation", "mentoring", "coaching",
+    "negotiation", "conflict resolution", "decision making",
+    "analytical thinking", "strategic thinking", "presentation"
+  ],
+  "project_management": [
+    "jira", "asana", "monday.com", "trello", "notion", "basecamp",
+    "confluence", "wiki", "documentation", "agile", "scrum",
+    "project planning", "resource allocation", "risk management",
+    "ms project", "smartsheet", "wrike", "podio"
+  ],
+  "ides_and_tools": [
+    "visual studio", "vscode", "intellij", "eclipse", "netbeans",
+    "sublime text", "atom", "vim", "emacs", "pycharm",
+    "datagrip", "webstorm", "goland", "rubymine", "clion",
+    "xcode", "android studio", "postman", "insomnia", "swagger"
+  ],
+  "other_technical_skills": [
+    "linux", "unix", "windows", "macos", "bash", "shell script", "powershell",
+    "ssl", "tls", "https", "encryption", "security", "pentesting",
+    "api design", "system design", "scalability", "performance optimization",
+    "database design", "architecture", "design patterns",
+    "web scraping", "etl", "data pipeline", "data integration"
+  ]
+}
