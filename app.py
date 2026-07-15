@@ -407,12 +407,11 @@ else:
         with tab4:
             st.markdown("### 📄 Job Description Matching")
 
-            jd_file = st.file_uploader(
-                "Or upload Job Description (.txt)",
-                type=["txt"],
+           jd_file = st.file_uploader(
+                "Upload Job Description",
+                type=["txt", "pdf"],
                 key="jd_upload",
-            )
-
+           )
             if jd_file is not None:
                 jd_text = jd_file.getvalue().decode("utf-8")
             else:
