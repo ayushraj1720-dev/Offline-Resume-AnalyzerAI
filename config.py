@@ -30,3 +30,15 @@ USE_SEMANTIC_MATCHING = False
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 
 EMBEDDING_MODEL_CACHE_DIR = "./models"
+# ATS Scoring Configuration
+
+ATS_WEIGHTS = {
+    "section_completeness": 0.20,
+    "skill_match": 0.30,
+    "keyword_density": 0.15,
+    "formatting": 0.15,
+    "readability": 0.20,
+}
+
+MIN_RESUME_WORDS = 250
+MAX_RESUME_WORDS = 700
