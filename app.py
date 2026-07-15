@@ -436,17 +436,58 @@ else:
 
            
 
-            if jd_text:
-                if st.button("🔍 Match Resume to JD", type="primary"):
-                    with st.spinner("Analyzing job description match..."):
-                        jd_match = match_resume_to_jd(
-                            st.session_state.resume_text,
-                            jd_text,
-                            st.session_state.sections,
-                        )
-                        st.session_state.jd_match_result = jd_match
+        if jd_text:
+            if st.button("🔍 Match Resume to JD", type="primary"):
+                with st.spinner("Analyzing job description match..."):
+                    jd_match = match_resume_to_jd(
+                        st.session_state.resume_text,
+                        jd_text,
+                        st.session_state.sections,
+                    )
+                    st.session_state.jd_match_result = jd_match
 
-            if st.session_state.jd_match_result:
+        if st.session_state.jd_match_result:
+            match_result = st.session_state.jd_match_result
+
+            # Score
+            col1, col2, col3 = st.columns(3)
+
+            with col1:
+                st.metric(
+                    "Match Score",
+                    f"{match_result['overall_match_score']:.0f}/100",
+                    border=True,
+                )
+
+            with col2:
+                st.metric(
+                    "Grade",
+                    match_result["match_grade"],
+                    border=True,
+                )
+
+            with col3:
+                skill_match = match_result["skill_match_result"]
+                st.metric(
+                    "Skills Match",
+                    f"{skill_match['matched_count']}/{skill_match['jd_total']}",
+                    border=True,
+                )
+
+            st.divider()
+
+            # Missing skills
+            missing = match_result["skill_match_result"]["missing_skills"]
+            if missing:
+                st.markdown("### ❌ Missing Skills")
+                missing_names = [s["name"] for s in missing[:10]]
+                st.markdown(", ".join(missing_names))
+
+            # Recommendations
+            if match_result["recommendations"]:
+                st.markdown("### 💡 Recommendations")
+                for rec in match_result["recommendations"]:
+                    st.markdown(f"- {rec}")
                 match_result = st.session_state.jd_match_result
 
                 # Score
