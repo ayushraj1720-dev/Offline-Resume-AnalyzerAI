@@ -85,16 +85,30 @@ class ResumeAnalysisReport:
         self.pdf.multi_cell(0, 8, title)
         self.pdf.ln(2)
 
-    def add_text(self, text: str, bold: bool = False, color: tuple = None):
-        """Add body text."""
-        style = "B" if bold else ""
-        self.pdf.set_font("Helvetica", style, size=10)
-        if color:
-            self.pdf.set_text_color(*color)
-        else:
-            self.pdf.set_text_color(*self.text_color)
-        self.pdf.multi_cell(0, 6, text)
-        self.pdf.ln(2)
+    def add_text(
+    self,
+    text: str,
+    bold: bool = False,
+    color: tuple = None,
+    align: str = "L",
+):
+    """Add body text."""
+    style = "B" if bold else ""
+    self.pdf.set_font("Helvetica", style, size=10)
+
+    if color:
+        self.pdf.set_text_color(*color)
+    else:
+        self.pdf.set_text_color(*self.text_color)
+
+    self.pdf.multi_cell(
+        0,
+        6,
+        text,
+        align=align,
+    )
+
+    self.pdf.ln(2)
 
     def add_key_value_pair(self, key: str, value: str):
         """Add a key-value pair (like Score: 75/100)."""
