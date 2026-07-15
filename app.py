@@ -406,12 +406,22 @@ else:
         # ===================================================================
         with tab4:
             st.markdown("### 📄 Job Description Matching")
+            jd_file = st.file_uploader(
+    "Or upload Job Description (.txt)",
+    type=["txt"],
+    key="jd_upload",
+)
 
-            jd_text = st.text_area(
-                "Paste job description here (optional)",
-                placeholder="Paste the job description you want to match against...",
-                height=150,
-            )
+if jd_file is not None:
+    jd_text = jd_file.read().decode("utf-8")
+else:
+    jd_text = st.text_area(
+        "Paste job description here (optional)",
+        placeholder="Paste the job description you want to match against...",
+        height=150,
+    )
+
+           
 
             if jd_text:
                 if st.button("🔍 Match Resume to JD", type="primary"):
