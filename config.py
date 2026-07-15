@@ -22,3 +22,11 @@ PRIVACY_MESSAGE = (
     "🔒 All resume analysis is performed locally on your device. "
     "No resume content is uploaded to cloud AI services."
 )
+# Skill Extractor Configuration
+SKILL_TAXONOMY_PATH = "utils/models/skill_taxonomy.json"
+
+USE_SEMANTIC_MATCHING = False
+
+EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
+
+EMBEDDING_MODEL_CACHE_DIR = "./models"
